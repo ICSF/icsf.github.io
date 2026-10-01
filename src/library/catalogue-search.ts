@@ -6,7 +6,7 @@ const PAGE_SIZE = 100;
 const DEBOUNCE_MS = 120;
 
 // some author names are put as these formats in the db
-const FORMATS = ['dvd', 'video', 'magazine', 'comics', 'bluray', 'dc: comics'];
+const FORMATS = ['dvd', 'video', 'magazine', 'comics', 'bluray', 'dc: comics', 'audio'];
 
 type CatalogueRow = {
     title: string;
