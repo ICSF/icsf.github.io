@@ -4,7 +4,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(
     ({command}) => ({
-      base: command === 'build' ? '/icsf/' : '/',
+      base: command === 'build' ? '/' : '/',
       root: './src',
       publicDir: '../public',
       build: {
