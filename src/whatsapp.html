@@ -16,20 +16,39 @@
     <site-nav></site-nav>
 
     <main>
-        <!--TODO: change this to be on tech priest email and also make it more useful by actually using server-side validation-->
-        <div class="cf-turnstile" 
-             data-sitekey="0x4AAAAAAEfhPGq7Mae2tV9L"
-             data-callback="onSuccess">
-        </div>
+       <form
+            id="joinForm"
+            action="https://verify-icsf.shriyasistla11.workers.dev"
+            method="post">
 
-        <button id="joinBtn" hidden style="height:60px;width:200px;background-color:rgba(127, 255, 185, 0.543)">Join WhatsApp Channel</button>
+            <div
+                class="cf-turnstile"
+                data-sitekey="0x4AAAAAAEfhPGq7Mae2tV9L"
+                data-callback="onSuccess">
+            </div>
+        
+            <input
+                id="turnstileToken"
+                name="turnstileToken"
+                type="hidden">
+        
+            <button
+                id="joinBtn"
+                type="submit"
+                hidden
+                style="height:60px;width:200px;background-color:rgba(127, 255, 185, 0.543)">
+                Join WhatsApp Channel
+            </button>
+        </form>
     </main>
 
     <site-footer></site-footer>
 
-    <!--link obfuscated using online tool to deter bots-->
     <script>
-        function buildLink(){var _0x9b69f=(663516^663518)+(137539^137543);const _0xba_0x225=[347807^347804,434266^434264,954005^954005,153494^153495,208115^208119];_0x9b69f=(381603^381601)+(873618^873619);var _0xba27ba=(738656^738665)+(817411^817418);const _0xeeb=["\u0059\u0058\u0042\u0077\u004C\u006D\u004E\u0076\u0062\u0053\u0039","\u004C\u0063\u006B\u0051\u0079\u0064\u0047\u0030\u0032\u0051\u0032\u0073\u0078","zRXYodnL0FGaj".split("").reverse().join(""),"\u0061\u0048\u0052\u0030\u0063\u0048\u004D\u0036\u004C\u0079\u0039","DVTMVZUbjJDaRFUe".split("").reverse().join("")];_0xba27ba=(658429^658431)+(183633^183640);return atob(_0xba_0x225['\u006D\u0061\u0070'](i=>_0xeeb[i])['\u006A\u006F\u0069\u006E'](''));}function onSuccess(){setTimeout(()=>{const _0x5674ca=document['\u0067\u0065\u0074\u0045\u006C\u0065\u006D\u0065\u006E\u0074\u0042\u0079\u0049\u0064']("\u006A\u006F\u0069\u006E\u0042\u0074\u006E");_0x5674ca['\u0068\u0069\u0064\u0064\u0065\u006E']=false;_0x5674ca['\u006F\u006E\u0063\u006C\u0069\u0063\u006B']=()=>{window['\u006C\u006F\u0063\u0061\u0074\u0069\u006F\u006E']['\u0068\u0072\u0065\u0066']=buildLink();};},339530^338682);}
+        function onSuccess(token) {
+            document.getElementById("turnstileToken").value = token;
+            document.getElementById("joinBtn").hidden = false;
+        }
     </script>
 </body>
 </html>
